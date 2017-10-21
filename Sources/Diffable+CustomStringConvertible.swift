@@ -17,6 +17,9 @@ extension Diffable /*: CustomStringConvertible */ {
         case let .number(number):
             return number.description
 
+        case let .cgfloat(number):
+            return "CGFloat(\(number))"
+
         case let .bool(bool):
             return bool.description
 

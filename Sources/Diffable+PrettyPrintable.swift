@@ -13,6 +13,9 @@ extension Diffable: PrettyPrintable {
         case let .number(number):
             return [.line(number.description)]
 
+        case let .cgfloat(number):
+            return [.line("CGFloat(\(number))")]
+
         case let .bool(bool):
             return [.line(bool.description)]
 

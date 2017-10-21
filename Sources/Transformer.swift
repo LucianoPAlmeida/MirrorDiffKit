@@ -1,4 +1,5 @@
 import Foundation
+import CoreGraphics
 
 
 
@@ -81,6 +82,10 @@ private func transformFromNonOptionalAny(_ x: Any) -> Diffable {
             return Diffable.from(y)
         }
     #endif
+
+    if let y = x as? CGFloat {
+        return Diffable.from(y)
+    }
 
 
     // MARK: - String related types

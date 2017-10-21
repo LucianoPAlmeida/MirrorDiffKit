@@ -1,4 +1,5 @@
 import Foundation
+import CoreGraphics
 
 
 public indirect enum Diffable {
@@ -6,6 +7,7 @@ public indirect enum Diffable {
     case none
     case string(String)
     case number(Double)
+    case cgfloat(CGFloat)
     case bool(Bool)
     case date(Date)
     case url(URL)

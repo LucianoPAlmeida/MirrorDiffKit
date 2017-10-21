@@ -1,5 +1,6 @@
 import XCTest
 import Foundation
+import CoreGraphics
 @testable import MirrorDiffKit
 
 
@@ -368,11 +369,12 @@ class TransformerTests: XCTestCase {
 
             // MARK: Generic
             #line: TestCase(
-                input: GenericStub(value: "string"),
+                input: CGSize(width: 0, height: 0),
                 target: .anyStruct(
-                    type: GenericStub<String>.self,
+                    type: CGSize.self,
                     entries: [
-                        "value": .string("string"),
+                        "height": .cgfloat(0),
+                        "width": .cgfloat(0),
                     ]
                 ),
                 expected: true

@@ -1,3 +1,7 @@
+import CoreGraphics
+
+
+
 extension Diffable: Hashable {
     public var hashValue: Int {
         switch self {
@@ -11,6 +15,9 @@ extension Diffable: Hashable {
             return string.hashValue
 
         case let .number(number):
+            return number.hashValue
+
+        case let .cgfloat(number):
             return number.hashValue
 
         case let .bool(bool):

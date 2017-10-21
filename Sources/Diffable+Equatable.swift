@@ -13,6 +13,9 @@ extension Diffable: Equatable {
         case let (.number(l), .number(r)):
             return l == r
 
+        case let (.cgfloat(l), .cgfloat(r)):
+            return l == r
+
         case let (.bool(l), .bool(r)):
             return l == r
 

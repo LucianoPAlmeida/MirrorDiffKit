@@ -1,4 +1,7 @@
 import Foundation
+import CoreGraphics
+
+
 
 public protocol DiffableConvertible {
     var diffable: Diffable { get }
@@ -96,6 +99,13 @@ extension Float: DiffableConvertible {
         }
     }
 #endif
+
+
+extension CGFloat: DiffableConvertible {
+    public var diffable: Diffable {
+        return .cgfloat(self)
+    }
+}
 
 
 extension Character: DiffableConvertible {
