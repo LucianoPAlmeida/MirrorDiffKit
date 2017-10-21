@@ -1,7 +1,3 @@
-import CoreGraphics
-
-
-
 extension Diffable: Hashable {
     public var hashValue: Int {
         switch self {

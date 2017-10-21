@@ -1,6 +1,10 @@
 import XCTest
 import Foundation
+#if !os(Linux)
 import CoreGraphics
+#endif
+
+
 @testable import MirrorDiffKit
 
 
@@ -373,8 +377,8 @@ class TransformerTests: XCTestCase {
                 target: .anyStruct(
                     type: CGSize.self,
                     entries: [
-                        "height": .cgfloat(0),
-                        "width": .cgfloat(0),
+                        "height": .cgfloat(LinuxCompatibleCGFloat(CGFloat(0))),
+                        "width": .cgfloat(LinuxCompatibleCGFloat(CGFloat(0))),
                     ]
                 ),
                 expected: true

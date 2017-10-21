@@ -1,5 +1,7 @@
 import Foundation
+#if !os(Linux)
 import CoreGraphics
+#endif
 
 
 
@@ -93,17 +95,17 @@ extension Float: DiffableConvertible {
 
 
 #if arch(x86_64) || arch(i386)
-    extension Float80: DiffableConvertible {
-        public var diffable: Diffable {
-            return .number(Double(self))
-        }
+extension Float80: DiffableConvertible {
+    public var diffable: Diffable {
+        return .number(Double(self))
     }
+}
 #endif
 
 
 extension CGFloat: DiffableConvertible {
     public var diffable: Diffable {
-        return .cgfloat(self)
+        return .cgfloat(LinuxCompatibleCGFloat(self))
     }
 }
 
