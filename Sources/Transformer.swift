@@ -85,6 +85,8 @@ private func transformFromNonOptionalAny(_ x: Any) -> Diffable {
         }
     #endif
 
+    print(type(of: x))
+    print(x as? CGFloat)
     if let y = x as? CGFloat {
         return Diffable.from(y)
     }

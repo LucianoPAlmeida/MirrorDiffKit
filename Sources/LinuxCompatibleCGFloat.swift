@@ -1,6 +1,6 @@
 #if os(Linux)
 // XXX: This is a fake implementation for Linux.
-public struct CGFloat<T> {
+public struct CGFloat {
     let value: Double
 
     init(_ value: Double) {
