@@ -1,3 +1,9 @@
+dependencies:
+  pre:
+    - git clone --depth 1 https://github.com/kylef/swiftenv.git "~/.swiftenv" 
+  cache_directories:
+    - "~/.swiftenv"
+
 test:
   override:
     - Tests/run
